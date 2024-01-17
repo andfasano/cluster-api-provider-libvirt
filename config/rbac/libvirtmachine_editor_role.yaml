@@ -1,0 +1,31 @@
+# permissions for end users to edit libvirtmachines.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: libvirtmachine-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: cluster-api-provider-libvirt
+    app.kubernetes.io/part-of: cluster-api-provider-libvirt
+    app.kubernetes.io/managed-by: kustomize
+  name: libvirtmachine-editor-role
+rules:
+- apiGroups:
+  - infrastructure.cluster.x-k8s.io
+  resources:
+  - libvirtmachines
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - infrastructure.cluster.x-k8s.io
+  resources:
+  - libvirtmachines/status
+  verbs:
+  - get

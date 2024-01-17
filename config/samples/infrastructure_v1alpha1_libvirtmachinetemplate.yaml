@@ -1,0 +1,12 @@
+apiVersion: infrastructure.cluster.x-k8s.io/v1alpha1
+kind: LibvirtMachineTemplate
+metadata:
+  labels:
+    app.kubernetes.io/name: libvirtmachinetemplate
+    app.kubernetes.io/instance: libvirtmachinetemplate-sample
+    app.kubernetes.io/part-of: cluster-api-provider-libvirt
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: cluster-api-provider-libvirt
+  name: libvirtmachinetemplate-sample
+spec:
+  # TODO(user): Add fields here
